@@ -44,7 +44,7 @@ Here we've got 2 layers of LSTM instead of Simple RNN and we added Dropout to av
 
 ### Performances
 
-![loss](/home/victor/Documents/M1/NLP/SentimentAnalysisProject/img/loss.png)
+![loss](./img/loss.png)
 
 Our LSTM Model is performing better than the baseline model, even if the baseline train loss is close to the LSTM train loss the baseline validation loss isn't following the baseline training loss.
 
@@ -56,7 +56,7 @@ Then we built our pipeline to perform quick predictions and export our model int
 
 Here an exemple of the pipeline :
 
-![pipeline_exemple](/home/victor/Documents/M1/NLP/SentimentAnalysisProject/img/pipeline_exemple.png)
+![pipeline_exemple](./img/pipeline_exemple.png)
 
 ## Suggested Improvements
 
