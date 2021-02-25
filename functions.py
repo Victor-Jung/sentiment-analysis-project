@@ -5,13 +5,12 @@ from nltk.corpus import stopwords
 from nltk.tokenize import TweetTokenizer
 from nltk.stem.lancaster import LancasterStemmer
 
-tokenizer = TweetTokenizer(strip_handles=True)
-stop_words = set(stopwords.words('english'))
-stemmer = LancasterStemmer()
-
 # Useful stolen clean tweet function, it convert contractions and tokenize
 
 def clean(tweet):
+    
+    stop_words = set(stopwords.words('english'))
+    stemmer = LancasterStemmer()
 
     # Contractions
     tweet = re.sub(r"he's", "he is", tweet)
@@ -146,12 +145,13 @@ def clean(tweet):
         tweet = tweet.replace('..', ' ... ')
 
     # Tokenize
+    tokenizer = TweetTokenizer(strip_handles=True)
     tweet_words = tokenizer.tokenize(tweet)
 
     # Stemming
-    #tweet = [stemmer.stem(w) for w in tweet_words]
+    tweet = [stemmer.stem(w) for w in tweet_words]
 
-    # Eliminating the word if its length is less than 3
+    # Eliminating the word if its length is less than 2
     tweet = [w for w in tweet_words if len(w) > 2]
 
     # remove stopwords
